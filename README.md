@@ -13,3 +13,28 @@ To implement an assembler for a hypothetical language. Programs to get familiar 
 10. A Program in YACC to evaluate an expression (simple calculator program for addition and subtraction, multiplication, division).
 11. Program in YACC to recognize the string „abbb‟, „ab‟ „a‟ of the langauge (an b n , n>=1).
 12. Program in YACC to recognize the language (an b , n>=10). (output to say input is valid or not)
+
+## Lex
+### Syntax
+<b>filename.l</b>
+```lex
+%{
+	//Declarations and import here
+%}
+%%
+	//Rules here along with functionalities
+%%
+int main()
+{
+	yylex();
+	//May put some functionalities here as well
+	return 1;
+}
+```
+
+### Compilation
+```bash
+$ lex filename.l 
+$ gcc -o filename lex.yy.c -lfl
+$ ./filename
+```
