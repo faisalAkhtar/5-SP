@@ -6,6 +6,7 @@
 | Achaar        |       | 250g | HariMirch Achaar chhoti hona chahiye |
 | Kewda         | 5/10  | 1btl |                                      |
 | Color         | 5/10  | 1btl | Orange, biryani ka                   |
+| Chironji      | 15-20 | 50g  |                          
 
 ## Dadda
 | Item          | Price | Qty  | Description |
