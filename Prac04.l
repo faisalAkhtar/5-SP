@@ -8,6 +8,7 @@
 "while"|"if"|"else"|"case"|"default"|"for"|"printf"|"scanf"|"return"|"main"|"int"|"float"|"double"|"char" {keywords++;}
 [a-zA-Z_][a-zA-Z0-9]* {identifiers++;}
 ['+'|'-'|'*'|'/'] {operators++;}
+"//".*\n {comments++;}
 . {;}
 %%
 int main()
