@@ -17,7 +17,7 @@ To implement an assembler for a hypothetical language. Programs to get familiar 
 ## Lex
 ### Syntax
 <b>filename.l</b>
-```lex
+```
 %{
 	//Declarations and import here
 %}
@@ -36,5 +36,57 @@ int main()
 ```bash
 $ lex filename.l 
 $ gcc -o filename lex.yy.c -lfl
+$ ./filename
+```
+
+## Yacc
+### Syntax
+<b>filename.l - Lexical Analyzer</b>
+```
+%{
+	//Declarations and import here
+%}
+
+%%
+	//Rules here and return to Yacc file
+%%
+
+int yywrap()
+{
+	return 1;
+}
+```
+<b>filename.y - Syntactical Analyzer</b>
+```
+%{
+	//Import statements here
+%}
+
+%token	//All tokens got from lex here
+%left	//Stack to put your operators here. Operators declared on the same line are of equal precedence. New line operators are of higher precedence
+
+%%
+	//Grammer here
+%%
+
+int main()
+{
+	yyparse();
+	//May put some functionalities here as well
+	//exit(0) - Optional
+}
+
+int yyerror(char *s)
+{
+	//What happens if error encounters
+	//exit(0) - Optional
+}
+```
+
+### Compilation
+```bash
+$ yacc -d filename.y 
+$ lex filename.l 
+$ gcc -o filename lex.yy.c y.tab.c -w
 $ ./filename
 ```
