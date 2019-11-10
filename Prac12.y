@@ -6,7 +6,7 @@
 
 %%
 S : A A A A A A A A A A T B '\n'	{printf("Valid string\n");exit(0);}
-T : T A | A | ;
+T : A T | ;
 %%
 
 int main()
